@@ -15,7 +15,6 @@ public class UserEntity {
 	private Integer userId;//primary key 
 	private String firstName;
 	private String lastName;
-	private String username;
 	private String email;
 	private String password;
 	private String contactNum;
@@ -23,6 +22,8 @@ public class UserEntity {
 	private String bornYear;
 	private String gender;
 	private String role;
+	private String otp;
+	private String profilePicPath;
 	
 	public Integer getUserId() {
 		return userId;
@@ -52,14 +53,6 @@ public class UserEntity {
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	
-	
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
 	}
 	
 	
@@ -109,6 +102,21 @@ public class UserEntity {
 	public void setRole(String role) {
 		this.role = role;
 	}
+	public String getOtp() {
+		return otp;
+	}
+	public void setOtp(String otp) {
+		this.otp = otp;
+	}
+	public String getProfilePicPath() {
+		return profilePicPath;
+	}
+	public void setProfilePicPath(String profilePicPath) {
+		this.profilePicPath = profilePicPath;
+	}
+	
+	}
 	
 	
-}
+	
+	

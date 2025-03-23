@@ -7,7 +7,7 @@
 <title>Home</title>
 </head>
 <body>
-<h1>Home page</h1>
-<h2>welcome to our portal</h2>
+<h1>Homepage</h1>
+<h2>welcome, ${user.firstName}</h2></body>
 </body>
 </html>

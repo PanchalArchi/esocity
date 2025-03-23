@@ -36,6 +36,6 @@ public class VehicleController {
 	public String listVehicle(Model model) {
 		List<VehicleEntity> listVehicle = repositoryVehicle.findAll(); // select *
 		model.addAttribute("listVehicle", listVehicle);
-		return "ListVehicle";
+		return "AddVehicle";
 	}
 }

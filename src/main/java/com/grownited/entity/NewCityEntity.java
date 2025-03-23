@@ -14,6 +14,13 @@ public class NewCityEntity {
 	@GeneratedValue
 	private Integer CityId;
 	private String cityName;
+	private String stateId;
+	public String getStateId() {
+		return stateId;
+	}
+	public void setStateId(String stateId) {
+		this.stateId = stateId;
+	}
 	public Integer getCityId() {
 		return CityId;
 	}

@@ -1,5 +1,7 @@
 package com.grownited.controller;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +29,7 @@ public class MemberController {
 		return "NewMember";
 	}
 	
-	@GetMapping("listmember")
+	@GetMapping("listmembers")
 	public String listMember(Model model) {
 	    List<MemberEntity> memberList = repoMember.findAll(); // Fetch all data from the members table.
 		
@@ -37,4 +39,30 @@ public class MemberController {
 		
 		return "ListMember";
 	}
-}
+	
+	@GetMapping("viewmember")
+	public String viewMember(Integer memberId,Model model) {
+		//?
+		System.out.println("id ===>"+memberId);
+	 Optional<MemberEntity> op = repoMember.findById(memberId);
+	 if(op.isEmpty()) {
+		 //not found
+	 }else {
+		 //data found
+		 MemberEntity member = op.get();
+		 //send data to jsp ->
+		 model.addAttribute("member",member);
+	 }
+		return"ViewMember";
+	}
+	
+	@GetMapping("deletemember")
+	public String deleteMember(Integer memberId) {
+		repoMember.deleteById(memberId);//delete from members where memberID = :memberId
+		return "redirect:/listmember";
+  }
+	
+}	
+	
+
+
